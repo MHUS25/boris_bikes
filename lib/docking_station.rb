@@ -1,17 +1,13 @@
 class DockingStation
-  attr_reader :bikes
 
-  def initialize
-    @bikes = Array.new
-  end
+attr_reader :bike
 
   def release_bike
-    fail 'docking station empty' if @bikes.empty?
-    @bikes.pop
+    Bike.new
   end
 
   def dock(bike)
-    fail 'docking station full' if @bikes.count >= 20
-    @bikes << bike
+    @bike = bike
   end
+
 end
