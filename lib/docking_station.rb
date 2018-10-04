@@ -1,7 +1,10 @@
 class DockingStation
 DEFAULT_CAPACITY = 20
 attr_reader :bikes
-def initialize
+attr_reader :capacity
+
+def initialize(capacity=DEFAULT_CAPACITY)
+  @capacity = capacity
   @bikes = []
 end
 
@@ -19,7 +22,7 @@ end
 private
 
 def full?
-  @bikes.count >= DEFAULT_CAPACITY
+  @bikes.count >= @capacity
 end
 
 def empty?
