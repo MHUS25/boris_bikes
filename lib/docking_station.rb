@@ -1,3 +1,5 @@
+require 'bike.rb'
+
 class DockingStation
 DEFAULT_CAPACITY = 20
 attr_reader :bikes
@@ -10,7 +12,7 @@ end
 
 
   def release_bike
-    raise 'No bikes available' if empty?
+    raise 'No bikes available' if empty? || broken?
     @bikes.pop
   end
 
