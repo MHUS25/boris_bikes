@@ -19,11 +19,11 @@ end
 
   def dock(bike)
     raise 'Docking station is full' if full?
-    if bike.broken?
-      @broken_bikes.push(bike)
-    else
+    #  if bike.broken?
+    #    @broken_bikes.push(bike)
+    #  else
       @bikes.push(bike)
-    end
+    #end
   end
 
 private
