@@ -8,17 +8,22 @@ attr_reader :capacity
 def initialize(capacity=DEFAULT_CAPACITY)
   @capacity = capacity
   @bikes = []
+  @broken_bikes = []
 end
 
 
   def release_bike
-    raise 'No bikes available' if empty? || broken?
+    raise 'No bikes available' if empty?
     @bikes.pop
   end
 
   def dock(bike)
     raise 'Docking station is full' if full?
-    @bikes.push(bike)
+    if bike.broken?
+      @broken_bikes.push(bike)
+    else
+      @bikes.push(bike)
+    end
   end
 
 private
