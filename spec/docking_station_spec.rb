@@ -59,6 +59,4 @@ describe DockingStation do
         expect{ docking_station.dock bike }.to raise_error 'Docking station is full'
       end
     end
-
-
 end

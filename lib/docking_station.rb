@@ -1,4 +1,4 @@
-require 'bike.rb'
+#require 'bike.rb'
 
 class DockingStation
 DEFAULT_CAPACITY = 20
@@ -19,11 +19,11 @@ end
 
   def dock(bike)
     raise 'Docking station is full' if full?
-    #  if bike.broken?
-    #    @broken_bikes.push(bike)
-    #  else
+    if bike.working?
       @bikes.push(bike)
-    #end
+    else
+      @broken_bikes.push(bike)
+    end
   end
 
 private
